@@ -1,1 +1,2 @@
 sudo shutdown -h now		//shutdown the computer or sudo shutdown -h -t 30
+sudo chmod a+rw /dev/ttyUSB0	//give read write access to USB port
