@@ -4,20 +4,20 @@ var url = require('url');
 var path = require('path');
 var io = require('socket.io','net')(http) //require socket.io module and pass the http object (server)
 var Gpio = require('onoff').Gpio; //include onoff to interact with the GPIO
-var LED26 = new Gpio(26, 'out'); //use GPIO pin 26 as output
-var LED20 = new Gpio(20, 'out'); //use GPIO pin 20 as output
-var LED21 = new Gpio(21, 'out'); //use GPIO pin 21 as output
-var LED16 = new Gpio(16, 'out'); //use GPIO pin 16 as output
+var LED26 = new Gpio(2, 'out'); //use GPIO pin 26 as output
+var LED20 = new Gpio(3, 'out'); //use GPIO pin 20 as output
+var LED21 = new Gpio(4, 'out'); //use GPIO pin 21 as output
+var LED16 = new Gpio(5, 'out'); //use GPIO pin 16 as output
 
 
-var GPIO26value = 0;  // Turn on the LED by default
-var GPIO20value = 0;  // Turn on the LED by default
-var GPIO21value = 1;  // Turn on the LED by default
-var GPIO16value = 1;  // Turn on the LED by default
+var GPIO26value = 0;  // Turn off the LED by default
+var GPIO20value = 0;  // Turn off the LED by default
+var GPIO21value = 0;  // Turn off the LED by default
+var GPIO16value = 0;  // Turn off the LED by default
 
 /****** CONSTANTS******************************************************/
 
-const WebPort = 80;
+const WebPort = 82;
 
 
 /* if you want to run WebPort on a port lower than 1024 without running
@@ -38,10 +38,10 @@ http.listen(WebPort, function() {  // This gets call when the web server is firs
 	LED21.writeSync(GPIO21value); //turn LED on or off
 	LED16.writeSync(GPIO16value); //turn LED on or off
 	console.log('Server running on Port '+WebPort);
-	console.log('GPIO26 = '+GPIO26value);
-	console.log('GPIO20 = '+GPIO20value);
-	console.log('GPIO21 = '+GPIO21value);
-	console.log('GPIO16 = '+GPIO16value);
+	//console.log('GPIO26 = '+GPIO26value);
+	//console.log('GPIO20 = '+GPIO20value);
+	//console.log('GPIO21 = '+GPIO21value);
+	//console.log('GPIO16 = '+GPIO16value);
 	} 
 ); 
 
